@@ -1,0 +1,120 @@
+{
+  "id" : "844ed87d85b0bf2702ce3741e3afbc0f4714e478",
+  "parent" : "bb674a8a0138b346bf96f20c9bae98cbce04ddcf",
+  "name" : "pit-attack:urltrain=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/,urltest=/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/",
+  "seed" : 8332948514544784891,
+  "params" : {
+    "urltrain" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/",
+    "urltest" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/"
+  },
+  "report" : {
+    "started_at" : 1717050220156,
+    "completed_at" : 1717050220227,
+    "node_stats" : [
+      {
+        "name" : "EventSourceTrain",
+        "started_at" : 1717050220156,
+        "completed_at" : 1717050220181,
+        "successful" : true,
+        "duration" : 25,
+        "completed" : true
+      },
+      {
+        "name" : "EventSourceTest",
+        "started_at" : 1717050220189,
+        "completed_at" : 1717050220190,
+        "successful" : true,
+        "duration" : 1,
+        "completed" : true
+      },
+      {
+        "name" : "MMCReIdentKSet",
+        "started_at" : 1717050220191,
+        "completed_at" : 1717050220221,
+        "successful" : false,
+        "error" : {
+          "class_name" : "fr.cnrs.liris.privamov.core.sparkle.SparkleJobException",
+          "message" : "Error while processing SourceDataFrame{fr.cnrs.liris.privamov.core.model.Trace, source=CsvSource{fr.cnrs.liris.privamov.core.model.Trace, uri=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/}}",
+          "stack_trace" : [
+            "fr.cnrs.liris.privamov.core.sparkle.SparkleEnv.submit(SparkleEnv.scala:116)",
+            "fr.cnrs.liris.privamov.core.sparkle.DataFrame.foreach(DataFrame.scala:160)",
+            "fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.formPOIsTrain(MMCReIdentKSet.scala:298)",
+            "fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.execute(MMCReIdentKSet.scala:50)",
+            "fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.execute(MMCReIdentKSet.scala:38)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:159)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:152)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:97)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:41)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:37)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor.execute(LocalExperimentExecutor.scala:37)",
+            "fr.cnrs.liris.accio.cli.RunCommand.fr$cnrs$liris$accio$cli$RunCommand$$make(RunCommand.scala:87)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:68)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:67)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.cli.RunCommand.execute(RunCommand.scala:67)",
+            "fr.cnrs.liris.accio.cli.CommandDispatcher.exec(CommandDispatcher.scala:80)",
+            "fr.cnrs.liris.accio.cli.AccioApp.main(AccioApp.scala:57)",
+            "fr.cnrs.liris.accio.cli.AccioAppMain.main(AccioApp.scala)"
+          ],
+          "cause" : {
+            "class_name" : "java.lang.NumberFormatException",
+            "message" : "For input string: \"2024-05-27 05:28:54.481715\"",
+            "stack_trace" : [
+              "java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)",
+              "java.base/java.lang.Long.parseLong(Long.java:692)",
+              "java.base/java.lang.Long.parseLong(Long.java:817)",
+              "scala.collection.immutable.StringLike$class.toLong(StringLike.scala:276)",
+              "scala.collection.immutable.StringOps.toLong(StringOps.scala:29)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec.fr$cnrs$liris$privamov$core$io$CsvEventCodec$$decodeEvent(CsvEventCodec.scala:63)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)",
+              "scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)",
+              "scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)",
+              "scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)",
+              "scala.collection.mutable.WrappedArray.foreach(WrappedArray.scala:35)",
+              "scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)",
+              "scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec.decode(CsvEventCodec.scala:47)",
+              "fr.cnrs.liris.privamov.core.io.TraceDecoder.decode(TraceCodec.scala:43)",
+              "fr.cnrs.liris.privamov.core.io.CsvSource.read(CsvSource.scala:50)",
+              "fr.cnrs.liris.privamov.core.sparkle.SourceDataFrame.load(SourceDataFrame.scala:35)",
+              "fr.cnrs.liris.privamov.core.sparkle.SparkleEnv$$anonfun$2$$anonfun$apply$1.apply(SparkleEnv.scala:111)",
+              "scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)",
+              "scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)",
+              "java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)",
+              "java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)",
+              "java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)",
+              "java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)",
+              "java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)",
+              "java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)"
+            ]
+          }
+        },
+        "duration" : 30,
+        "completed" : true
+      }
+    ],
+    "artifacts" : [
+      {
+        "name" : "EventSourceTrain/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/",
+          "format" : "csv"
+        }
+      },
+      {
+        "name" : "EventSourceTest/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/",
+          "format" : "csv"
+        }
+      }
+    ],
+    "duration" : 71,
+    "completed" : true,
+    "successful" : false
+  }
+}

@@ -1,0 +1,4 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_lppms_0.001_1km_train[0m
+Experiment af554f12: [32mspatialTemporalDistortion[0m
+  Run 41b277b5: [32mspatialTemporalDistortion:urltrain=/home/ubuntu/EDEN/output_lppms_0.001_1km_train/data-accio,urltest=/home/ubuntu/EDEN/output_lppms_0.001_1km_train/data/72d052ee6ea743edd08c427ac1b84cadcd4027fe-GeoIndistinguishability/data[0m
+    EventSourceTrain    EventSourceTest     SpatioTemporalDistortiongeoi                                    Done in 0s. Reports in [33m/home/ubuntu/EDEN/output_lppms_0.001_1km_train[0m

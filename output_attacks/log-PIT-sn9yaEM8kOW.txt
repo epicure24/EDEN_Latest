@@ -1,0 +1,2 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_attacks[0m
+[31mUnknown param: urlTrain[0m

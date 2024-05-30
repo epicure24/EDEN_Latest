@@ -1,0 +1,8 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_attacks[0m
+Experiment aa53c350: [32map-attack[0m
+  Run ebd6c56c: [32map-attack:urlTrain=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/,urlTest=/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/,cellSize=800.0.meters[0m
+    EventSourceTrain    EventSourceTest     MatMatchingKSetsnonObflist of user size = 0  and equal 
+  Set()
+AP-Attack user re-identified : Set()
+AP-Attack rate : NaN
+                              Done in 0s. Reports in [33m/home/ubuntu/EDEN/output_attacks[0m

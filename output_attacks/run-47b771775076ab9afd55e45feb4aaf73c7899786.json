@@ -1,0 +1,122 @@
+{
+  "id" : "47b771775076ab9afd55e45feb4aaf73c7899786",
+  "parent" : "2850f8ca6a0b4f4b4a3e991068b37c3eb4e63614",
+  "name" : "ap-attack:urlTrain=/home/ubuntu/EDEN/output_attacks/data-accio/train_data/,urlTest=/home/ubuntu/EDEN/output_attacks/data-accio/test_data/,cellSize=800.0.meters",
+  "seed" : 6383692646452364854,
+  "params" : {
+    "urlTrain" : "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/",
+    "urlTest" : "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/",
+    "cellSize" : "800.0.meters"
+  },
+  "report" : {
+    "started_at" : 1717053053561,
+    "completed_at" : 1717053053645,
+    "node_stats" : [
+      {
+        "name" : "EventSourceTrain",
+        "started_at" : 1717053053561,
+        "completed_at" : 1717053053593,
+        "successful" : true,
+        "duration" : 32,
+        "completed" : true
+      },
+      {
+        "name" : "EventSourceTest",
+        "started_at" : 1717053053602,
+        "completed_at" : 1717053053603,
+        "successful" : true,
+        "duration" : 1,
+        "completed" : true
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf",
+        "started_at" : 1717053053604,
+        "completed_at" : 1717053053639,
+        "successful" : false,
+        "error" : {
+          "class_name" : "fr.cnrs.liris.privamov.core.sparkle.SparkleJobException",
+          "message" : "Error while processing MapDataFrame{SourceDataFrame{fr.cnrs.liris.privamov.core.model.Trace, source=CsvSource{fr.cnrs.liris.privamov.core.model.Trace, uri=/home/ubuntu/EDEN/output_attacks/data-accio/train_data/}}}",
+          "stack_trace" : [
+            "fr.cnrs.liris.privamov.core.sparkle.SparkleEnv.submit(SparkleEnv.scala:116)",
+            "fr.cnrs.liris.privamov.core.sparkle.DataFrame.toArray(DataFrame.scala:76)",
+            "fr.cnrs.liris.privamov.ops.MatMatchingKSetsOp.restrictArea(MatMatchingKSet.scala:719)",
+            "fr.cnrs.liris.privamov.ops.MatMatchingKSetsOp.execute(MatMatchingKSet.scala:51)",
+            "fr.cnrs.liris.privamov.ops.MatMatchingKSetsOp.execute(MatMatchingKSet.scala:41)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:159)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:152)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:97)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:41)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:37)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor.execute(LocalExperimentExecutor.scala:37)",
+            "fr.cnrs.liris.accio.cli.RunCommand.fr$cnrs$liris$accio$cli$RunCommand$$make(RunCommand.scala:87)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:68)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:67)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.cli.RunCommand.execute(RunCommand.scala:67)",
+            "fr.cnrs.liris.accio.cli.CommandDispatcher.exec(CommandDispatcher.scala:80)",
+            "fr.cnrs.liris.accio.cli.AccioApp.main(AccioApp.scala:57)",
+            "fr.cnrs.liris.accio.cli.AccioAppMain.main(AccioApp.scala)"
+          ],
+          "cause" : {
+            "class_name" : "java.lang.NumberFormatException",
+            "message" : "For input string: \"1716787734.481715\"",
+            "stack_trace" : [
+              "java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)",
+              "java.base/java.lang.Long.parseLong(Long.java:692)",
+              "java.base/java.lang.Long.parseLong(Long.java:817)",
+              "scala.collection.immutable.StringLike$class.toLong(StringLike.scala:276)",
+              "scala.collection.immutable.StringOps.toLong(StringOps.scala:29)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec.fr$cnrs$liris$privamov$core$io$CsvEventCodec$$decodeEvent(CsvEventCodec.scala:63)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)",
+              "scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)",
+              "scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)",
+              "scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)",
+              "scala.collection.mutable.WrappedArray.foreach(WrappedArray.scala:35)",
+              "scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)",
+              "scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)",
+              "fr.cnrs.liris.privamov.core.io.CsvEventCodec.decode(CsvEventCodec.scala:47)",
+              "fr.cnrs.liris.privamov.core.io.TraceDecoder.decode(TraceCodec.scala:43)",
+              "fr.cnrs.liris.privamov.core.io.CsvSource.read(CsvSource.scala:50)",
+              "fr.cnrs.liris.privamov.core.sparkle.SourceDataFrame.load(SourceDataFrame.scala:35)",
+              "fr.cnrs.liris.privamov.core.sparkle.MapDataFrame.load(DataFrame.scala:241)",
+              "fr.cnrs.liris.privamov.core.sparkle.SparkleEnv$$anonfun$2$$anonfun$apply$1.apply(SparkleEnv.scala:111)",
+              "scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)",
+              "scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)",
+              "java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)",
+              "java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)",
+              "java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)",
+              "java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)",
+              "java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)",
+              "java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)"
+            ]
+          }
+        },
+        "duration" : 35,
+        "completed" : true
+      }
+    ],
+    "artifacts" : [
+      {
+        "name" : "EventSourceTrain/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/",
+          "format" : "csv"
+        }
+      },
+      {
+        "name" : "EventSourceTest/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/",
+          "format" : "csv"
+        }
+      }
+    ],
+    "duration" : 84,
+    "completed" : true,
+    "successful" : false
+  }
+}

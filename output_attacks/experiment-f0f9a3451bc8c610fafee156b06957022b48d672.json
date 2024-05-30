@@ -1,0 +1,96 @@
+{
+  "id" : "f0f9a3451bc8c610fafee156b06957022b48d672",
+  "name" : "poi-attack",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "value" : "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "PoisReidentKSet/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "value" : "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "PoisReidentKSet/test"
+          ]
+        }
+      },
+      {
+        "name" : "PoisReidentKSet",
+        "op" : "PoisReidentKSet",
+        "inputs" : {
+          "duration" : {
+            "value" : 300000
+          },
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          },
+          "testDuration" : {
+            "value" : null
+          },
+          "testDiameter" : {
+            "value" : null
+          },
+          "diameter" : {
+            "value" : "500.0.meters"
+          },
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "MoMa <mohamed.maouche@insa-lyon.fr>",
+    "name" : "A",
+    "params" : [ ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : { },
+  "seed" : -7215698189279578959,
+  "report" : {
+    "started_at" : 1717053799217,
+    "completed_at" : 1717053799490,
+    "runs" : [
+      "55407050930a56f18c6a5500faca12e05d6870b1"
+    ],
+    "duration" : 273,
+    "completed" : true
+  }
+}

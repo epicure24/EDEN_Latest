@@ -1,0 +1,34 @@
+{
+  "name": "A",
+  "owner": "Shweta Sharma",
+  "graph": [
+    {
+      "op": "EventSource",
+      "name": "EventSourceTrain",
+      "inputs": {
+        "url": {"param": "urltrain", "default_value": "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/"},
+        "kind": {"value": "csv"}
+      }
+    },
+    {
+      "op": "EventSource",
+      "name": "EventSourceTest",
+      "inputs": {
+        "url": {"param": "urltest", "default_value": "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/"},
+        "kind": {"value": "csv"}
+      }
+    },
+    {
+      "op": "MMCReIdentKSet",
+      "name": "MMCReIdentKSet",
+      "inputs": {
+        "train": {"reference": "EventSourceTrain/data"},
+        "test": {"reference": "EventSourceTest/data"},
+        "duration": {"param": "duration", "default_value": "5.minutes"},
+        "diameter": {"param": "diameter", "default_value": "500.meters"},
+        "minPts": {"param": "minPts", "default_value": 1},
+        "attack": {"param": "attack", "default_value": "gambs"}
+      }
+    }
+  ]
+}

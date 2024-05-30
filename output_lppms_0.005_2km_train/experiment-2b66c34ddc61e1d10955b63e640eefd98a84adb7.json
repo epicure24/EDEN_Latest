@@ -1,0 +1,75 @@
+{
+  "id" : "2b66c34ddc61e1d10955b63e640eefd98a84adb7",
+  "name" : "geoi",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSource",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "url",
+            "default_value" : "/home/hacker/projet_mobility/sc/test-accio/42-fixed-3600-gap-900-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "GeoIndistinguishability/data"
+          ]
+        }
+      },
+      {
+        "name" : "GeoIndistinguishability",
+        "op" : "GeoIndistinguishability",
+        "inputs" : {
+          "epsilon" : {
+            "value" : 0.001
+          },
+          "data" : {
+            "reference" : "EventSource/data"
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "MoMa <mohamed.maouche@insa-lyon.fr",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "url",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSource/url"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : {
+    "url" : {
+      "value" : "/home/ubuntu/EDEN/output_lppms_0.005_2km_train/data-accio"
+    }
+  },
+  "seed" : 5752096268258964193,
+  "report" : {
+    "started_at" : 1717048825650,
+    "completed_at" : 1717048825798,
+    "runs" : [
+      "ba79170cf251832bc968b581fecd652884569afa"
+    ],
+    "duration" : 148,
+    "completed" : true
+  }
+}

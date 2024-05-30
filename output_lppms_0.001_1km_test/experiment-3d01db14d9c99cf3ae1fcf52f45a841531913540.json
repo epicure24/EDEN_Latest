@@ -1,0 +1,134 @@
+{
+  "id" : "3d01db14d9c99cf3ae1fcf52f45a841531913540",
+  "name" : "areaCoverage",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltrain",
+            "default_value" : "/home/hacker/projet_mobility/sc/42-fixed-3600-gap-900-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "AreaCoverageMatrix/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltest",
+            "default_value" : "/home/hacker/projet_mobility/sc/42-fixed-3600-gap-900-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "AreaCoverageMatrix/test"
+          ]
+        }
+      },
+      {
+        "name" : "AreaCoverageMatrix",
+        "op" : "AreaCoverageMatrix",
+        "inputs" : {
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          },
+          "cellSize" : {
+            "param" : "cellSize",
+            "default_value" : "800.0.meters"
+          },
+          "lat1" : {
+            "value" : -61.0
+          },
+          "lat2" : {
+            "value" : 80.0
+          },
+          "lng2" : {
+            "value" : 171.0
+          },
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          },
+          "lng1" : {
+            "value" : -131.0
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "MoMa <mohamed.maouche@insa-lyon.fr",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "cellSize",
+        "type" : "distance",
+        "is_optional" : true,
+        "ports" : [
+          "AreaCoverageMatrix/cellSize"
+        ]
+      },
+      {
+        "name" : "urltest",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTest/url"
+        ]
+      },
+      {
+        "name" : "urltrain",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTrain/url"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : {
+    "urltrain" : {
+      "value" : "/home/ubuntu/EDEN/output_lppms_0.001_1km_test/data-accio"
+    },
+    "urltest" : {
+      "value" : "/home/ubuntu/EDEN/output_lppms_0.001_1km_test/data/a82a6d0f33e3ec99b0413c4377d0f66855955aa9-GeoIndistinguishability/data"
+    }
+  },
+  "seed" : 3069957051725463114,
+  "report" : {
+    "started_at" : 1717048795992,
+    "completed_at" : 1717048796308,
+    "runs" : [
+      "f98cc61a4e9c4ebceeb7bd61b5291f2937dd2989"
+    ],
+    "duration" : 316,
+    "completed" : true
+  }
+}

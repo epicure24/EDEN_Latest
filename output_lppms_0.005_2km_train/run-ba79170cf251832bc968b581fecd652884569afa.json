@@ -1,0 +1,52 @@
+{
+  "id" : "ba79170cf251832bc968b581fecd652884569afa",
+  "parent" : "2b66c34ddc61e1d10955b63e640eefd98a84adb7",
+  "name" : "geoi:url=/home/ubuntu/EDEN/output_lppms_0.005_2km_train/data-accio",
+  "seed" : 4772459967318128387,
+  "params" : {
+    "url" : "/home/ubuntu/EDEN/output_lppms_0.005_2km_train/data-accio"
+  },
+  "report" : {
+    "started_at" : 1717048825666,
+    "completed_at" : 1717048825796,
+    "node_stats" : [
+      {
+        "name" : "EventSource",
+        "started_at" : 1717048825666,
+        "completed_at" : 1717048825691,
+        "successful" : true,
+        "duration" : 25,
+        "completed" : true
+      },
+      {
+        "name" : "GeoIndistinguishability",
+        "started_at" : 1717048825698,
+        "completed_at" : 1717048825794,
+        "successful" : true,
+        "duration" : 96,
+        "completed" : true
+      }
+    ],
+    "artifacts" : [
+      {
+        "name" : "EventSource/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/output_lppms_0.005_2km_train/data-accio",
+          "format" : "csv"
+        }
+      },
+      {
+        "name" : "GeoIndistinguishability/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/output_lppms_0.005_2km_train/data/ba79170cf251832bc968b581fecd652884569afa-GeoIndistinguishability/data",
+          "format" : "csv"
+        }
+      }
+    ],
+    "duration" : 130,
+    "completed" : true,
+    "successful" : true
+  }
+}

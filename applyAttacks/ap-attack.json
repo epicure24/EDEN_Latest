@@ -1,0 +1,37 @@
+{
+  "name": "A",
+  "owner": "Shweta",
+  "graph": [
+    {
+      "op": "EventSource",
+      "name": "EventSourceTrain",
+      "inputs": {
+        "url": {"param": "urlTrain", "default_value": "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/"},
+        "kind": {"value": "csv"}
+      }
+    },
+    {
+      "op": "EventSource",
+      "name": "EventSourceTest",
+      "inputs": {
+        "url": {"param": "urlTest", "default_value": "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/"},
+        "kind": {"value": "csv"}
+      }
+    },
+    {
+      "op": "MatMatchingKSets",
+      "name": "MatMatchingKSetsnonObf",
+      "inputs": {
+        "train": {"reference": "EventSourceTrain/data"},
+        "test": {"reference": "EventSourceTest/data"},
+        "distanceType": {"param": "distanceType", "default_value": -51},
+        "cellSize": {"param": "cellSize", "default_value": "800.meters"},
+        "matrixType": {"param": "matrixType", "default_value": "full"},
+        "lat1": {"value": "-61"},
+        "lng1": {"value": "-131"},
+        "lat2": {"value": "80"},
+        "lng2": {"value": "171"}
+      }
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_attacks[0m
+Experiment bb674a8a: [32mpit-attack[0m
+  Run 844ed87d: [32mpit-attack:urltrain=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/,urltest=/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/[0m
+    EventSourceTrain    EventSourceTest     MMCReIdentKSet 
+                      06:23:40.231 [main] ERROR f.c.l.a.core.runtime.GraphExecutor - Error while executing run 844ed87d85b0bf2702ce3741e3afbc0f4714e478
+fr.cnrs.liris.privamov.core.sparkle.SparkleJobException: Error while processing SourceDataFrame{fr.cnrs.liris.privamov.core.model.Trace, source=CsvSource{fr.cnrs.liris.privamov.core.model.Trace, uri=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/}}
+	at fr.cnrs.liris.privamov.core.sparkle.SparkleEnv.submit(SparkleEnv.scala:116)
+	at fr.cnrs.liris.privamov.core.sparkle.DataFrame.foreach(DataFrame.scala:160)
+	at fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.formPOIsTrain(MMCReIdentKSet.scala:298)
+	at fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.execute(MMCReIdentKSet.scala:50)
+	at fr.cnrs.liris.privamov.ops.MMCReIdentKSetOp.execute(MMCReIdentKSet.scala:38)
+	at fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:159)
+	at fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:152)
+	at fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:97)
+	at fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:41)
+	at fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:37)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor.execute(LocalExperimentExecutor.scala:37)
+	at fr.cnrs.liris.accio.cli.RunCommand.fr$cnrs$liris$accio$cli$RunCommand$$make(RunCommand.scala:87)
+	at fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:68)
+	at fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:67)
+	at scala.collection.immutable.List.foreach(List.scala:381)
+	at fr.cnrs.liris.accio.cli.RunCommand.execute(RunCommand.scala:67)
+	at fr.cnrs.liris.accio.cli.CommandDispatcher.exec(CommandDispatcher.scala:80)
+	at fr.cnrs.liris.accio.cli.AccioApp.main(AccioApp.scala:57)
+	at fr.cnrs.liris.accio.cli.AccioAppMain.main(AccioApp.scala)
+Caused by: java.lang.NumberFormatException: For input string: "2024-05-27 05:28:54.481715"
+	at java.base/java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.base/java.lang.Long.parseLong(Long.java:692)
+	at java.base/java.lang.Long.parseLong(Long.java:817)
+	at scala.collection.immutable.StringLike$class.toLong(StringLike.scala:276)
+	at scala.collection.immutable.StringOps.toLong(StringOps.scala:29)
+	at fr.cnrs.liris.privamov.core.io.CsvEventCodec.fr$cnrs$liris$privamov$core$io$CsvEventCodec$$decodeEvent(CsvEventCodec.scala:63)
+	at fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)
+	at fr.cnrs.liris.privamov.core.io.CsvEventCodec$$anonfun$decode$1.apply(CsvEventCodec.scala:47)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.TraversableLike$$anonfun$flatMap$1.apply(TraversableLike.scala:241)
+	at scala.collection.IndexedSeqOptimized$class.foreach(IndexedSeqOptimized.scala:33)
+	at scala.collection.mutable.WrappedArray.foreach(WrappedArray.scala:35)
+	at scala.collection.TraversableLike$class.flatMap(TraversableLike.scala:241)
+	at scala.collection.AbstractTraversable.flatMap(Traversable.scala:104)
+	at fr.cnrs.liris.privamov.core.io.CsvEventCodec.decode(CsvEventCodec.scala:47)
+	at fr.cnrs.liris.privamov.core.io.TraceDecoder.decode(TraceCodec.scala:43)
+	at fr.cnrs.liris.privamov.core.io.CsvSource.read(CsvSource.scala:50)
+	at fr.cnrs.liris.privamov.core.sparkle.SourceDataFrame.load(SourceDataFrame.scala:35)
+	at fr.cnrs.liris.privamov.core.sparkle.SparkleEnv$$anonfun$2$$anonfun$apply$1.apply(SparkleEnv.scala:111)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.liftedTree1$1(Future.scala:24)
+	at scala.concurrent.impl.Future$PromiseCompletingRunnable.run(Future.scala:24)
+	at java.base/java.util.concurrent.ForkJoinTask$RunnableExecuteAction.exec(ForkJoinTask.java:1426)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:290)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1020)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1656)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1594)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:183)
+Done in 0s. Reports in [33m/home/ubuntu/EDEN/output_attacks[0m

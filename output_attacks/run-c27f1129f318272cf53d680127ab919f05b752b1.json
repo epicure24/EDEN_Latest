@@ -1,0 +1,54 @@
+{
+  "id" : "c27f1129f318272cf53d680127ab919f05b752b1",
+  "parent" : "88eaa4899d0f81e3000dc5bf98be4b8937793dc9",
+  "name" : "ap-attack:urlTrain=/home/ubuntu/EDEN/applyAttacks/input_files/train_data/,urlTest=/home/ubuntu/EDEN/applyAttacks/input_files/test_data/,cellSize=800.0.meters",
+  "seed" : 8854902919429157870,
+  "params" : {
+    "urlTrain" : "/home/ubuntu/EDEN/applyAttacks/input_files/train_data/",
+    "urlTest" : "/home/ubuntu/EDEN/applyAttacks/input_files/test_data/",
+    "cellSize" : "800.0.meters"
+  },
+  "report" : {
+    "started_at" : 1717051716004,
+    "completed_at" : 1717051716037,
+    "node_stats" : [
+      {
+        "name" : "EventSourceTrain",
+        "started_at" : 1717051716004,
+        "completed_at" : 1717051716031,
+        "successful" : false,
+        "error" : {
+          "class_name" : "java.lang.IllegalArgumentException",
+          "message" : "requirement failed: /home/ubuntu/EDEN/applyAttacks/input_files/train_data/ is not a directory",
+          "stack_trace" : [
+            "scala.Predef$.require(Predef.scala:224)",
+            "fr.cnrs.liris.privamov.core.io.CsvSource.<init>(CsvSource.scala:36)",
+            "fr.cnrs.liris.privamov.ops.EventSourceOp.execute(EventSourceOp.scala:36)",
+            "fr.cnrs.liris.privamov.ops.EventSourceOp.execute(EventSourceOp.scala:31)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:159)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:152)",
+            "fr.cnrs.liris.accio.core.runtime.GraphExecutor.execute(GraphExecutor.scala:97)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:41)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor$$anonfun$execute$1.apply(LocalExperimentExecutor.scala:37)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.core.runtime.LocalExperimentExecutor.execute(LocalExperimentExecutor.scala:37)",
+            "fr.cnrs.liris.accio.cli.RunCommand.fr$cnrs$liris$accio$cli$RunCommand$$make(RunCommand.scala:87)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:68)",
+            "fr.cnrs.liris.accio.cli.RunCommand$$anonfun$execute$1.apply(RunCommand.scala:67)",
+            "scala.collection.immutable.List.foreach(List.scala:381)",
+            "fr.cnrs.liris.accio.cli.RunCommand.execute(RunCommand.scala:67)",
+            "fr.cnrs.liris.accio.cli.CommandDispatcher.exec(CommandDispatcher.scala:80)",
+            "fr.cnrs.liris.accio.cli.AccioApp.main(AccioApp.scala:57)",
+            "fr.cnrs.liris.accio.cli.AccioAppMain.main(AccioApp.scala)"
+          ]
+        },
+        "duration" : 27,
+        "completed" : true
+      }
+    ],
+    "artifacts" : [ ],
+    "duration" : 33,
+    "completed" : true,
+    "successful" : false
+  }
+}

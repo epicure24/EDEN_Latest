@@ -1,0 +1,151 @@
+{
+  "id" : "043db21280227f253bed0ec6d3cc65bcb009946a",
+  "name" : "pit-attack",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltrain",
+            "default_value" : "/home/ubuntu/EDEN/output_attacks/data-accio/train_data/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MMCReIdentKSet/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltest",
+            "default_value" : "/home/ubuntu/EDEN/output_attacks/data-accio/test_data/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MMCReIdentKSet/test"
+          ]
+        }
+      },
+      {
+        "name" : "MMCReIdentKSet",
+        "op" : "MMCReIdentKSet",
+        "inputs" : {
+          "duration" : {
+            "param" : "duration",
+            "default_value" : 300000
+          },
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          },
+          "minPts" : {
+            "param" : "minPts",
+            "default_value" : 1
+          },
+          "diameter" : {
+            "param" : "diameter",
+            "default_value" : "500.0.meters"
+          },
+          "attack" : {
+            "param" : "attack",
+            "default_value" : "gambs"
+          },
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "Shweta Sharma",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "duration",
+        "type" : "duration",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/duration"
+        ]
+      },
+      {
+        "name" : "minPts",
+        "type" : "integer",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/minPts"
+        ]
+      },
+      {
+        "name" : "urltrain",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTrain/url"
+        ]
+      },
+      {
+        "name" : "urltest",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTest/url"
+        ]
+      },
+      {
+        "name" : "diameter",
+        "type" : "distance",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/diameter"
+        ]
+      },
+      {
+        "name" : "attack",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/attack"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : { },
+  "seed" : 8289951135369540533,
+  "report" : {
+    "started_at" : 1717053801197,
+    "completed_at" : 1717053801464,
+    "runs" : [
+      "c8624b4e908f95ce04cdc15b03e20e3f372a7510"
+    ],
+    "duration" : 267,
+    "completed" : true
+  }
+}

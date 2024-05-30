@@ -1,0 +1,9 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_attacks[0m
+Experiment 043db212: [32mpit-attack[0m
+  Run c8624b4e: [32mpit-attack[0m
+    EventSourceTrain    EventSourceTest     MMCReIdentKSet 
+len train= 50  len pois train=0 len mmc train= 0   
+len test= 50  len pois test=0 len mmc test= 0   
+PIT-Attack user re-identified : Set()
+PIT-Attack rate : 0.0
+                      Done in 0s. Reports in [33m/home/ubuntu/EDEN/output_attacks[0m

@@ -1,0 +1,110 @@
+{
+  "id" : "af554f12873e26ff174901f60ca2d7c26eebc6ff",
+  "name" : "spatialTemporalDistortion",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltrain",
+            "default_value" : "/home/mmaouche/Code/sklearn/mobilityTraceClassification/experiments/sc/verifySTD/test/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "SpatioTemporalDistortiongeoi/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltest",
+            "default_value" : "/home/mmaouche/Code/sklearn/mobilityTraceClassification/experiments/sc/verifySTD/data/"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "SpatioTemporalDistortiongeoi/test"
+          ]
+        }
+      },
+      {
+        "name" : "SpatioTemporalDistortiongeoi",
+        "op" : "SpatioTemporalDistortion",
+        "inputs" : {
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          },
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "MoMa <mohamed.maouche@insa-lyon.fr",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "urltest",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTest/url"
+        ]
+      },
+      {
+        "name" : "urltrain",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTrain/url"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : {
+    "urltrain" : {
+      "value" : "/home/ubuntu/EDEN/output_lppms_0.001_1km_train/data-accio"
+    },
+    "urltest" : {
+      "value" : "/home/ubuntu/EDEN/output_lppms_0.001_1km_train/data/72d052ee6ea743edd08c427ac1b84cadcd4027fe-GeoIndistinguishability/data"
+    }
+  },
+  "seed" : -6080944705590996341,
+  "report" : {
+    "started_at" : 1717048485874,
+    "completed_at" : 1717048486203,
+    "runs" : [
+      "41b277b5a81e869833736990f090648e16ba0716"
+    ],
+    "duration" : 329,
+    "completed" : true
+  }
+}

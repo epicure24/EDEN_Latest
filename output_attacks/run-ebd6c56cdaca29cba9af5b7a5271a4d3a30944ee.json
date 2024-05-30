@@ -1,0 +1,87 @@
+{
+  "id" : "ebd6c56cdaca29cba9af5b7a5271a4d3a30944ee",
+  "parent" : "aa53c350c1a0231c62a279328f2ab03f6330cbc2",
+  "name" : "ap-attack:urlTrain=/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/,urlTest=/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/,cellSize=800.0.meters",
+  "seed" : 1243283357051363456,
+  "params" : {
+    "urlTrain" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/",
+    "urlTest" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/",
+    "cellSize" : "800.0.meters"
+  },
+  "report" : {
+    "started_at" : 1717049021435,
+    "completed_at" : 1717049021522,
+    "node_stats" : [
+      {
+        "name" : "EventSourceTrain",
+        "started_at" : 1717049021435,
+        "completed_at" : 1717049021463,
+        "successful" : true,
+        "duration" : 28,
+        "completed" : true
+      },
+      {
+        "name" : "EventSourceTest",
+        "started_at" : 1717049021472,
+        "completed_at" : 1717049021474,
+        "successful" : true,
+        "duration" : 2,
+        "completed" : true
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf",
+        "started_at" : 1717049021475,
+        "completed_at" : 1717049021517,
+        "successful" : true,
+        "duration" : 42,
+        "completed" : true
+      }
+    ],
+    "artifacts" : [
+      {
+        "name" : "MatMatchingKSetsnonObf/probabilities",
+        "type" : "map(string,map(string,double))",
+        "value" : { }
+      },
+      {
+        "name" : "EventSourceTest/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/",
+          "format" : "csv"
+        }
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf/rate",
+        "type" : "double",
+        "value" : "NaN"
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf/distances",
+        "type" : "map(string,map(string,double))",
+        "value" : { }
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf/matches",
+        "type" : "map(string,string)",
+        "value" : { }
+      },
+      {
+        "name" : "EventSourceTrain/data",
+        "type" : "dataset",
+        "value" : {
+          "uri" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/",
+          "format" : "csv"
+        }
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf/klevel",
+        "type" : "map(string,integer)",
+        "value" : { }
+      }
+    ],
+    "duration" : 87,
+    "completed" : true,
+    "successful" : true
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "id" : "c7d7f1ed4fe8ad2ba53e8474067d9adbed93a4b4",
+  "name" : "ap-attack",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urlTrain",
+            "default_value" : "/home/hacker/projet_mobility/sc/train-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MatMatchingKSetsnonObf/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urlTest",
+            "default_value" : "/home/hacker/projet_mobility/sc/test-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MatMatchingKSetsnonObf/test"
+          ]
+        }
+      },
+      {
+        "name" : "MatMatchingKSetsnonObf",
+        "op" : "MatMatchingKSets",
+        "inputs" : {
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          },
+          "distanceType" : {
+            "param" : "distanceType",
+            "default_value" : -51
+          },
+          "diag" : {
+            "value" : "250000.0.meters"
+          },
+          "matrixType" : {
+            "param" : "matrixType",
+            "default_value" : "full"
+          },
+          "cellSize" : {
+            "param" : "cellSize",
+            "default_value" : "800.0.meters"
+          },
+          "lat1" : {
+            "value" : -61.0
+          },
+          "lat2" : {
+            "value" : 80.0
+          },
+          "lng2" : {
+            "value" : 171.0
+          },
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          },
+          "ang" : {
+            "value" : 45.0
+          },
+          "lng1" : {
+            "value" : -131.0
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "Besma",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "matrixType",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "MatMatchingKSetsnonObf/matrixType"
+        ]
+      },
+      {
+        "name" : "urlTrain",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTrain/url"
+        ]
+      },
+      {
+        "name" : "cellSize",
+        "type" : "distance",
+        "is_optional" : true,
+        "ports" : [
+          "MatMatchingKSetsnonObf/cellSize"
+        ]
+      },
+      {
+        "name" : "distanceType",
+        "type" : "integer",
+        "is_optional" : true,
+        "ports" : [
+          "MatMatchingKSetsnonObf/distanceType"
+        ]
+      },
+      {
+        "name" : "urlTest",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTest/url"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : {
+    "urlTrain" : {
+      "value" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/"
+    },
+    "urlTest" : {
+      "value" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/"
+    },
+    "cellSize" : {
+      "value" : "800.0.meters"
+    }
+  },
+  "seed" : -3815242209582734580,
+  "report" : {
+    "started_at" : 1717050216633,
+    "completed_at" : 1717050216764,
+    "runs" : [
+      "6c7db2e121c49017a83fd4461c73cb41c82a3baa"
+    ],
+    "duration" : 131,
+    "completed" : true
+  }
+}

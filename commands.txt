@@ -1,0 +1,17 @@
+# RUN INSIDE applyLPPM
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.001_1km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/EDEN/ 200.meters 0.001 1 train
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.001_1km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/EDEN/ 200.meters 0.001 1 test
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.005_2km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/EDEN/ 200.meters 0.005 2 train
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.005_2km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/EDEN/ 200.meters 0.005 2 test
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.01_3km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/EDEN/ 200.meters 0.01 3 train
+
+bash run_LPPMs-SERVER.sh /home/ubuntu/EDEN/input_files/train_data/ 15 output_lppms_0.01_3km /home/ubuntu/EDEN/applyLPPMs/ /home/ubuntu/PHD_Work/EDEN-main/ 200.meters 0.01 3 test
+
+# RUN inside applyAttacks
+
+bash run_single_attacks.sh /home/ubuntu/EDEN/input_files/train_data/ /home/ubuntu/EDEN/input_files/test_data/ 15days natural_disaster_db geoi /home/ubuntu/EDEN/output_attacks/ /home/ubuntu/EDEN/applyAttacks /home/ubuntu/EDEN/input_files/

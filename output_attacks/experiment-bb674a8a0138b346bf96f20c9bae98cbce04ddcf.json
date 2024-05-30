@@ -1,0 +1,158 @@
+{
+  "id" : "bb674a8a0138b346bf96f20c9bae98cbce04ddcf",
+  "name" : "pit-attack",
+  "workflow" : {
+    "graph" : [
+      {
+        "name" : "EventSourceTrain",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltrain",
+            "default_value" : "/home/hacker/projet_mobility/sc/train-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MMCReIdentKSet/train"
+          ]
+        }
+      },
+      {
+        "name" : "EventSourceTest",
+        "op" : "EventSource",
+        "inputs" : {
+          "url" : {
+            "param" : "urltest",
+            "default_value" : "/home/hacker/projet_mobility/sc/test-accio"
+          },
+          "kind" : {
+            "value" : "csv"
+          },
+          "sample" : {
+            "value" : null
+          },
+          "users" : {
+            "value" : [ ]
+          }
+        },
+        "outputs" : {
+          "data" : [
+            "MMCReIdentKSet/test"
+          ]
+        }
+      },
+      {
+        "name" : "MMCReIdentKSet",
+        "op" : "MMCReIdentKSet",
+        "inputs" : {
+          "duration" : {
+            "param" : "duration",
+            "default_value" : 300000
+          },
+          "test" : {
+            "reference" : "EventSourceTest/data"
+          },
+          "minPts" : {
+            "param" : "minPts",
+            "default_value" : 1
+          },
+          "diameter" : {
+            "param" : "diameter",
+            "default_value" : "500.0.meters"
+          },
+          "attack" : {
+            "param" : "attack",
+            "default_value" : "gambs"
+          },
+          "train" : {
+            "reference" : "EventSourceTrain/data"
+          }
+        },
+        "outputs" : { }
+      }
+    ],
+    "owner" : "MoMa <mohamed.maouche@insa-lyon.fr",
+    "name" : "A",
+    "params" : [
+      {
+        "name" : "duration",
+        "type" : "duration",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/duration"
+        ]
+      },
+      {
+        "name" : "minPts",
+        "type" : "integer",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/minPts"
+        ]
+      },
+      {
+        "name" : "urltrain",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTrain/url"
+        ]
+      },
+      {
+        "name" : "urltest",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "EventSourceTest/url"
+        ]
+      },
+      {
+        "name" : "diameter",
+        "type" : "distance",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/diameter"
+        ]
+      },
+      {
+        "name" : "attack",
+        "type" : "string",
+        "is_optional" : true,
+        "ports" : [
+          "MMCReIdentKSet/attack"
+        ]
+      }
+    ]
+  },
+  "owner" : "ubuntu",
+  "repeat" : 1,
+  "tags" : [ ],
+  "params" : {
+    "urltrain" : {
+      "value" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/train_data/"
+    },
+    "urltest" : {
+      "value" : "/home/ubuntu/EDEN/applyAttacks/new_input_files/test_data/"
+    }
+  },
+  "seed" : -176251916704795277,
+  "report" : {
+    "started_at" : 1717050220138,
+    "completed_at" : 1717050220233,
+    "runs" : [
+      "844ed87d85b0bf2702ce3741e3afbc0f4714e478"
+    ],
+    "duration" : 95,
+    "completed" : true
+  }
+}

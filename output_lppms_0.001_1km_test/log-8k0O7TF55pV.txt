@@ -1,0 +1,4 @@
+Writing progress in [33m/home/ubuntu/EDEN/output_lppms_0.001_1km_test[0m
+Experiment 376b9a2f: [32mspatialTemporalDistortion[0m
+  Run b3d93471: [32mspatialTemporalDistortion:urltrain=/home/ubuntu/EDEN/output_lppms_0.001_1km_test/data-accio,urltest=/home/ubuntu/EDEN/output_lppms_0.001_1km_test/tri-accio[0m
+    EventSourceTrain    EventSourceTest     SpatioTemporalDistortiongeoi                                    Done in 0s. Reports in [33m/home/ubuntu/EDEN/output_lppms_0.001_1km_test[0m
